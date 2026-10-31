@@ -91,9 +91,9 @@ p{margin:0 0 14px}
 }
 
 /* Telefon-Rahmen */
-.telefon{width:290px;aspect-ratio:9/19.5;background:#111A14;border-radius:46px;padding:11px;box-shadow:var(--sh-gross);position:relative}
+.telefon{width:290px;background:#111A14;border-radius:46px;padding:11px;box-shadow:var(--sh-gross);position:relative}
 .telefon::after{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:86px;height:24px;background:#111A14;border-radius:14px;z-index:2}
-.telefon .bild{width:100%;height:100%;border-radius:36px;overflow:hidden;position:relative;background:var(--bg-oben)}
+.telefon .bild{width:100%;aspect-ratio:804/1748;border-radius:36px;overflow:hidden;position:relative;background:var(--bg-oben)}
 .telefon .bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .7s ease}
 .telefon .bild img.weg{opacity:0}
 .telefon.klein{width:230px;border-radius:38px;padding:9px}
