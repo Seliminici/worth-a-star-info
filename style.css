@@ -1,0 +1,214 @@
+/* Worth a Star – Webseite. Farben, Schriften und Formen wie die Menüs im Spiel (CI Variante B).
+   Schriften liegen lokal in fonts/ (SIL Open Font License). Es wird nichts von fremden Servern geladen. */
+@font-face{font-family:'Bowlby One';font-weight:400;font-display:swap;src:url('fonts/bowlby-one-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Karla';font-weight:400;font-display:swap;src:url('fonts/karla-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Karla';font-weight:700;font-display:swap;src:url('fonts/karla-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Karla';font-weight:800;font-display:swap;src:url('fonts/karla-latin-800-normal.woff2') format('woff2')}
+
+:root{
+  --bg-oben:#E4EEDA; --bg-unten:#BFD2AD;
+  --karte:#FFFDF7; --kachel:#F1EAD9; --feld:#E2DAC6; --himmel:#DCEBF2;
+  --rose:#D2667A; --rose-kante:#A9485C; --rose-hell:#F9DDE2;
+  --senf:#E9B54C; --senf-kante:#C48A2A; --senf-hell:#FBEFD2;
+  --gruen:#5FA77A; --gruen-kante:#3F8159; --gruen-hell:#DCEFE1;
+  --blau:#3E5C8A;
+  --dunkel:#26332B; --dunkel-kante:#111A14;
+  --tinte:#1D1B18; --leise:#7A7364;
+  --sh-karte:0 14px 32px rgba(29,27,24,.16);
+  --sh-kachel:0 6px 14px rgba(29,27,24,.11);
+  --sh-gross:0 26px 60px rgba(29,27,24,.22);
+  --breit:1120px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg-unten);overflow-x:hidden;scroll-behavior:smooth;scroll-padding-top:84px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:linear-gradient(180deg,var(--bg-oben),var(--bg-unten)) fixed;color:var(--tinte);
+  font:400 17px/1.6 Karla,system-ui,-apple-system,sans-serif;-webkit-text-size-adjust:100%;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--rose-kante);font-weight:700}
+h1,h2,h3,.bowlby{font-family:'Bowlby One','Arial Black',sans-serif;font-weight:400;letter-spacing:.2px}
+h1{font-size:clamp(40px,7vw,76px);line-height:.98;margin:0 0 18px}
+h2{font-size:clamp(30px,4.4vw,46px);line-height:1.05;margin:0 0 14px}
+h3{font-size:22px;line-height:1.15;margin:0 0 8px}
+p{margin:0 0 14px}
+.leise{color:var(--leise)}
+.etikett{font:600 12px/1 'IBM Plex Mono',ui-monospace,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-kante);margin:0 0 12px;display:block}
+.wrap{max-width:var(--breit);margin:0 auto;padding:0 20px}
+
+/* Kopfleiste */
+.kopf{position:sticky;top:0;z-index:20;padding:12px 0;background:rgba(228,238,218,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.marke{display:flex;align-items:center;gap:10px;font:400 21px/1 'Bowlby One','Arial Black',sans-serif;color:var(--tinte);text-decoration:none;white-space:nowrap}
+.marke img{width:34px;height:34px}
+.nav{display:flex;gap:6px;align-items:center}
+.nav a{color:var(--tinte);text-decoration:none;font-weight:800;font-size:15px;padding:9px 14px;border-radius:22px}
+.nav a:hover{background:var(--karte)}
+.nav a.aktiv{background:var(--karte);box-shadow:var(--sh-kachel)}
+@media (max-width:760px){.nav a.mehr{display:none}}
+
+/* Knöpfe mit 3D-Kante wie im Spiel */
+.knopf{display:inline-flex;align-items:center;gap:10px;font:400 18px/1 'Bowlby One','Arial Black',sans-serif;text-decoration:none;
+  padding:16px 26px;border-radius:22px;color:#fff;background:var(--rose);box-shadow:0 5px 0 var(--rose-kante),var(--sh-kachel);
+  transition:transform .12s ease,box-shadow .12s ease;border:0;cursor:pointer}
+.knopf:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--rose-kante),var(--sh-karte)}
+.knopf:active{transform:translateY(4px);box-shadow:0 1px 0 var(--rose-kante)}
+.knopf img{width:26px;height:26px}
+.knopf.dunkel{background:var(--dunkel);box-shadow:0 5px 0 var(--dunkel-kante),var(--sh-kachel)}
+.knopf.dunkel:hover{box-shadow:0 7px 0 var(--dunkel-kante),var(--sh-karte)}
+.knopf.hell{background:var(--karte);color:var(--tinte);box-shadow:0 5px 0 var(--feld),var(--sh-kachel)}
+.knopf.klein{font-size:15px;padding:12px 18px;border-radius:18px}
+
+/* Hintergrund-Deko wie im Spiel: helle Kreise und kleine Sterne */
+.deko{position:relative;isolation:isolate;overflow-x:clip}
+.deko::before,.deko::after{content:"";position:absolute;border-radius:50%;background:#fff;z-index:-1;pointer-events:none}
+.deko::before{width:620px;height:620px;opacity:.22;top:-140px;right:-160px}
+.deko::after{width:380px;height:380px;opacity:.16;bottom:-120px;left:-140px}
+.stern{position:absolute;width:18px;opacity:.85;z-index:-1;pointer-events:none}
+
+/* Hero */
+.hero{padding:42px 0 70px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero p.unter{font-size:20px;max-width:520px;color:#3b3833}
+.hero .aktionen{display:flex;flex-wrap:wrap;gap:16px;margin-top:26px}
+.hero .hinweis{margin-top:16px;font-size:14px;color:var(--leise)}
+.buehne{position:relative;min-height:600px}
+.buehne .telefon{position:relative;margin:0 auto;z-index:2}
+.schwebe{position:absolute;z-index:3;filter:drop-shadow(0 10px 14px rgba(29,27,24,.18));animation:schweben 6s ease-in-out infinite}
+.schwebe.a{width:150px;left:-40px;top:30px;animation-delay:-1s}
+.schwebe.b{width:130px;right:-30px;top:150px;animation-delay:-3s}
+.schwebe.c{width:150px;left:-50px;bottom:10px;animation-delay:-2s}
+.schwebe.d{width:130px;right:-40px;bottom:120px;animation-delay:-4s}
+@keyframes schweben{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(2deg)}}
+@media (max-width:880px){
+  .hero .wrap{grid-template-columns:1fr}
+  .schwebe.a,.schwebe.b,.schwebe.c,.schwebe.d{display:none}
+  .schwebe.a,.schwebe.d{display:block}
+  .buehne{min-height:520px}
+  .schwebe.a,.schwebe.c{left:0}.schwebe.b,.schwebe.d{right:0}
+  .schwebe{width:110px!important}
+}
+
+/* Telefon-Rahmen */
+.telefon{width:290px;aspect-ratio:9/19.5;background:#111A14;border-radius:46px;padding:11px;box-shadow:var(--sh-gross);position:relative}
+.telefon::after{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:86px;height:24px;background:#111A14;border-radius:14px;z-index:2}
+.telefon .bild{width:100%;height:100%;border-radius:36px;overflow:hidden;position:relative;background:var(--bg-oben)}
+.telefon .bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;transition:opacity .7s ease}
+.telefon .bild img.weg{opacity:0}
+.telefon.klein{width:230px;border-radius:38px;padding:9px}
+.telefon.klein .bild{border-radius:30px}
+.telefon.klein::after{top:15px;width:68px;height:19px}
+
+/* Abschnitte */
+section{padding:84px 0;position:relative}
+.kopfzeile{max-width:680px;margin-bottom:38px}
+.kopfzeile p{font-size:19px;color:#3b3833}
+.karte{background:var(--karte);border-radius:30px;box-shadow:var(--sh-karte);padding:28px}
+.kachel{background:var(--kachel);border-radius:18px;padding:18px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.zwei.umgekehrt>:first-child{order:2}
+@media (max-width:880px){.zwei{grid-template-columns:1fr;gap:32px}.zwei.umgekehrt>:first-child{order:0}}
+.telefone{display:flex;gap:22px;justify-content:center;align-items:flex-start}
+.telefone .telefon:nth-child(2){margin-top:46px}
+@media (max-width:560px){.telefone .telefon.klein{width:46%}.telefone .telefon.klein .bild{border-radius:22px}.telefone .telefon.klein{border-radius:28px;padding:7px}.telefone .telefon.klein::after{display:none}}
+
+/* Woche in drei Schritten */
+.schritte{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.schritt{background:var(--karte);border-radius:30px;box-shadow:var(--sh-karte);padding:22px;display:flex;flex-direction:column;gap:14px}
+.schritt .nr{counter-increment:s;display:flex;align-items:center;gap:12px}
+.schritt .nr::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--rose);color:#fff;font:400 20px/1 'Bowlby One',sans-serif;box-shadow:0 3px 0 var(--rose-kante)}
+.schritt .vorschau{border-radius:20px;overflow:hidden;background:var(--himmel);aspect-ratio:4/3}
+.schritt .vorschau img{width:100%;height:100%;object-fit:cover;object-position:50% var(--y,0%)}
+@media (max-width:880px){.schritte{grid-template-columns:1fr}}
+
+/* Werte */
+.werte{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.wert{background:var(--kachel);border-radius:18px;padding:16px;text-align:center}
+.wert img{width:40px;height:40px;margin:0 auto 8px}
+.wert b{display:block;font:400 17px/1.1 'Bowlby One',sans-serif}
+.wert span{font-size:14px;color:var(--leise)}
+@media (max-width:560px){.werte{grid-template-columns:repeat(2,1fr)}}
+
+/* Minispiele */
+.minis{display:grid;grid-template-columns:1fr 330px;gap:40px;align-items:start}
+.polaroids{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px}
+.polaroid{background:#fff;padding:10px 10px 12px;border-radius:6px;box-shadow:var(--sh-kachel);cursor:pointer;border:0;text-align:left;font:inherit;color:inherit;
+  transform:rotate(var(--r,0deg));transition:transform .18s ease,box-shadow .18s ease}
+.polaroid:nth-child(3n+1){--r:-2deg}.polaroid:nth-child(3n+2){--r:1.5deg}.polaroid:nth-child(4n){--r:-1deg}
+.polaroid:hover,.polaroid:focus-visible{transform:rotate(0) translateY(-4px) scale(1.03);box-shadow:var(--sh-karte);outline:none}
+.polaroid[aria-pressed="true"]{box-shadow:0 0 0 4px var(--rose),var(--sh-karte);transform:rotate(0) scale(1.03)}
+.polaroid img{aspect-ratio:1;object-fit:cover;border-radius:2px}
+.polaroid b{display:block;font:400 15px/1.15 'Bowlby One',sans-serif;margin-top:9px}
+.polaroid span{display:block;font-size:13px;line-height:1.35;color:var(--leise);margin-top:3px}
+.minis .vorschau{position:sticky;top:100px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.minis .vorschau .titel{font:400 22px/1.1 'Bowlby One',sans-serif;text-align:center}
+@media (max-width:880px){.minis{grid-template-columns:1fr}.minis .vorschau{position:static;order:-1}}
+
+/* Fassaden */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.filter button{font:800 15px/1 Karla,sans-serif;border:0;border-radius:20px;padding:10px 16px;background:var(--karte);color:var(--tinte);cursor:pointer;box-shadow:var(--sh-kachel)}
+.filter button[aria-pressed="true"]{background:var(--dunkel);color:#fff}
+.fassaden{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+.fassade{background:var(--karte);border-radius:24px;box-shadow:var(--sh-kachel);padding:12px;border:2px solid transparent}
+.fassade .bildflaeche{background:var(--himmel);border-radius:18px;aspect-ratio:4/3;display:flex;align-items:flex-end;justify-content:center;padding:8px 8px 4px}
+.fassade .bildflaeche img{max-height:100%;width:auto;object-fit:contain}
+.fassade b{display:block;font:400 15px/1.15 'Bowlby One',sans-serif;margin:10px 4px 6px}
+.selt{display:inline-block;font:600 10px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;border-radius:10px;padding:5px 8px;margin:0 4px 4px;color:#fff;background:#A79F8C}
+.fassade[data-s="selten"]{border-color:var(--gruen)} .fassade[data-s="selten"] .selt{background:var(--gruen-kante)}
+.fassade[data-s="rar"]{border-color:var(--blau)} .fassade[data-s="rar"] .selt{background:var(--blau)}
+.fassade[data-s="legendaer"]{border-color:var(--senf)} .fassade[data-s="legendaer"] .selt{background:var(--senf-kante)}
+.fassade[hidden]{display:none}
+
+/* Personal */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.chip{font:600 12px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;border-radius:12px;padding:8px 12px;color:#fff}
+
+/* Anleitungs-Karten */
+.anleitungen{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:880px){.anleitungen{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.anleitungen{grid-template-columns:1fr}}
+.anleitungen a{display:flex;gap:14px;align-items:flex-start;background:var(--karte);border-radius:24px;padding:20px;box-shadow:var(--sh-kachel);color:var(--tinte);text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+.anleitungen a:hover{transform:translateY(-3px);box-shadow:var(--sh-karte)}
+.anleitungen img{width:46px;height:46px;flex:none}
+.anleitungen b{display:block;font:400 18px/1.15 'Bowlby One',sans-serif;margin-bottom:4px}
+.anleitungen span{font-size:15px;color:var(--leise);line-height:1.45}
+
+/* Abschluss-Band */
+.band{background:var(--dunkel);color:#fff;border-radius:36px;padding:48px 36px;text-align:center;box-shadow:var(--sh-gross);position:relative;overflow:hidden}
+.band h2{color:#fff}
+.band p{color:#D6DED0;max-width:560px;margin:0 auto 24px}
+.band .fassreihe{display:flex;justify-content:center;gap:10px;margin-bottom:22px;flex-wrap:wrap}
+.band .fassreihe img{height:70px;width:auto}
+
+/* Anleitung (Unterseite) */
+.inhalt{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start}
+.toc{position:sticky;top:96px;background:var(--karte);border-radius:24px;padding:18px;box-shadow:var(--sh-kachel)}
+.toc a{display:block;color:var(--tinte);text-decoration:none;font-weight:800;font-size:15px;padding:8px 10px;border-radius:12px}
+.toc a:hover{background:var(--kachel)}
+.kapitel{background:var(--karte);border-radius:30px;box-shadow:var(--sh-karte);padding:30px;margin-bottom:24px;display:grid;grid-template-columns:1fr 200px;gap:28px;align-items:start}
+.kapitel.ohnebild{grid-template-columns:1fr}
+.kapitel h2{font-size:30px;display:flex;align-items:center;gap:12px}
+.kapitel h2 img{width:42px;height:42px}
+.kapitel ol,.kapitel ul{padding-left:22px;margin:0 0 14px}
+.kapitel li{margin-bottom:8px}
+.tipp{background:var(--senf-hell);border-radius:16px;padding:12px 16px;font-size:15.5px;margin-top:6px}
+.tipp b{color:#8A5F12}
+.kapitel .telefon{width:200px;border-radius:32px;padding:8px}
+.kapitel .telefon .bild{border-radius:25px}
+.kapitel .telefon::after{top:13px;width:58px;height:16px}
+@media (max-width:880px){.inhalt{grid-template-columns:1fr}.toc{position:static}.kapitel{grid-template-columns:1fr}.kapitel .telefon{margin:0 auto}}
+
+/* Rechtstexte */
+.recht{max-width:760px;margin:0 auto;padding:30px 20px 60px}
+.recht .karte{margin-bottom:18px;padding:24px 26px 12px}
+.recht h1{font-size:clamp(34px,6vw,48px)}
+.recht h2{font:800 20px/1.3 Karla,system-ui,sans-serif;margin:0 0 8px;letter-spacing:0}
+.recht ul{padding-left:20px;margin:0 0 14px}
+.recht li{margin-bottom:6px}
+.recht address{font-style:normal;margin-bottom:14px}
+
+/* Fuß */
+footer.fuss{padding:40px 0 50px;color:var(--leise);font-size:15px}
+footer.fuss .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:space-between;align-items:center}
+footer.fuss nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer.fuss a{color:var(--tinte);text-decoration:none;font-weight:800}
+footer.fuss a:hover{text-decoration:underline}
