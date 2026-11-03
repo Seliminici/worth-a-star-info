@@ -39,7 +39,7 @@ p{margin:0 0 14px}
 .kopf{position:sticky;top:0;z-index:20;padding:12px 0;background:rgba(228,238,218,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .kopf .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .marke{display:flex;align-items:center;gap:10px;font:400 21px/1 'Bowlby One','Arial Black',sans-serif;color:var(--tinte);text-decoration:none;white-space:nowrap}
-.marke img{width:34px;height:34px}
+.marke img{width:34px;height:34px;border-radius:9px}
 .nav{display:flex;gap:6px;align-items:center}
 .nav a{color:var(--tinte);text-decoration:none;font-weight:800;font-size:15px;padding:9px 14px;border-radius:22px}
 .nav a:hover{background:var(--karte)}

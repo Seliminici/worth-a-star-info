@@ -9,14 +9,16 @@
 <meta property="og:description" content="A cozy restaurant game for iPhone: shifts, mini-games, staff, facades and an empire around the world.">
 <meta property="og:image" content="img/gebaeude/laden-cafe.webp">
 <meta name="theme-color" content="#E4EEDA">
-<link rel="icon" href="img/symbole/stern.svg" type="image/svg+xml">
+<link rel="icon" href="img/logo/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="img/logo/favicon-64.png" sizes="64x64" type="image/png">
+<link rel="apple-touch-icon" href="img/logo/apple-touch-icon.png">
 <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 
 <header class="kopf">
   <div class="wrap">
-    <a class="marke" href="#top"><img src="img/symbole/stern.svg" alt="">Worth a Star</a>
+    <a class="marke" href="#top"><img src="img/logo/app-icon-128.png" alt="">Worth a Star</a>
     <nav class="nav" aria-label="Main navigation">
       <a class="mehr" href="#woche">Play</a>
       <a class="mehr" href="#minispiele">Mini-games</a>
@@ -48,11 +50,11 @@
     <div class="buehne">
       <div class="telefon" id="hero-telefon" aria-label="Pictures from the game">
         <div class="bild">
-          <img src="img/screens/en/home.webp?v=2" alt="Home screen with café and locations">
-          <img class="weg" src="img/screens/en/schicht.webp?v=2" alt="A shift with receipt printer and team" loading="lazy">
-          <img class="weg" src="img/screens/en/welt.webp?v=2" alt="The globe with your cities" loading="lazy">
-          <img class="weg" src="img/screens/en/pizzaofen.webp?v=2" alt="Mini-game Pizza oven" loading="lazy">
-          <img class="weg" src="img/screens/en/standort.webp?v=2" alt="A location with an ice cream parlour facade" loading="lazy">
+          <img src="img/screens/en/home.webp?v=3" alt="Home screen with café and locations">
+          <img class="weg" src="img/screens/en/schicht.webp?v=3" alt="A shift with receipt printer and team" loading="lazy">
+          <img class="weg" src="img/screens/en/welt.webp?v=3" alt="The globe with your cities" loading="lazy">
+          <img class="weg" src="img/screens/en/pizzaofen.webp?v=3" alt="Mini-game Pizza oven" loading="lazy">
+          <img class="weg" src="img/screens/en/standort.webp?v=3" alt="A location with an ice cream parlour facade" loading="lazy">
         </div>
       </div>
       <img class="schwebe a" src="img/fassaden/foodtruck.webp" alt="">
@@ -74,17 +76,17 @@
     <div class="schritte">
       <div class="schritt">
         <div class="nr"><h3>Play your shift</h3></div>
-        <div class="telefon mini"><div class="bild"><img src="img/screens/en/schicht.webp?v=2" alt="Shift with a card from the receipt printer" loading="lazy"></div></div>
+        <div class="telefon mini"><div class="bild"><img src="img/screens/en/schicht.webp?v=3" alt="Shift with a card from the receipt printer" loading="lazy"></div></div>
         <p>The receipt printer spits out cards: guests, suppliers, problems. Swipe left or right. Your team is ready at the bottom.</p>
       </div>
       <div class="schritt">
         <div class="nr"><h3>Solve dilemmas</h3></div>
-        <div class="telefon mini"><div class="bild"><img src="img/screens/en/zwickmuehle.webp?v=2" alt="Dilemma with two answers" loading="lazy"></div></div>
+        <div class="telefon mini"><div class="bild"><img src="img/screens/en/zwickmuehle.webp?v=3" alt="Dilemma with two answers" loading="lazy"></div></div>
         <p>Sometimes there is no perfect answer. Small arrows show you up front what a choice does to Reputation, Cash, Team and Quality.</p>
       </div>
       <div class="schritt">
         <div class="nr"><h3>Weekly bill</h3></div>
-        <div class="telefon mini"><div class="bild"><img src="img/screens/en/abrechnung.webp?v=2" alt="Weekly bill at the end of the week" loading="lazy"></div></div>
+        <div class="telefon mini"><div class="bild"><img src="img/screens/en/abrechnung.webp?v=3" alt="Weekly bill at the end of the week" loading="lazy"></div></div>
         <p>At the end of the week you see what's left over. Use the profit to expand, hire, or open your next location.</p>
       </div>
     </div>
@@ -106,9 +108,9 @@
 <section id="minispiele" class="deko">
   <div class="wrap">
     <div class="kopfzeile">
-      <span class="etikett">11 mini-games</span>
+      <span class="etikett">12 mini-games</span>
       <h2>Lend a hand yourself</h2>
-      <p>Every now and then you step into the kitchen yourself. Each mini-game takes about a minute and earns coins. In the break room you can play them all just for fun and chase records.</p>
+      <p>Every now and then you step into the kitchen yourself. Each mini-game takes just 30 seconds and earns coins. In the break room you can play them all just for fun and chase records.</p>
     </div>
     <div class="minis">
       <div class="polaroids" id="polaroids">
@@ -123,10 +125,11 @@
         <button class="polaroid" data-k="pass"><img src="img/polaroids/pass.webp" alt="" loading="lazy"><b>Kitchen pass</b><span>Every order to the right table.</span></button>
         <button class="polaroid" data-k="spuelberg"><img src="img/polaroids/spuelberg.webp" alt="" loading="lazy"><b>Dish mountain</b><span>Scrub before the pile grows.</span></button>
         <button class="polaroid" data-k="schnippel"><img src="img/polaroids/schnippel.webp" alt="" loading="lazy"><b>Chopping board</b><span>One swipe, one cut.</span></button>
+        <button class="polaroid" data-k="zapfhahn"><img src="img/polaroids/zapfhahn.webp" alt="" loading="lazy"><b>On Tap</b><span>Pour to the line with a perfect head.</span></button>
         <button class="polaroid" data-k="pausenraum"><img src="img/polaroids/bonus.webp" alt="" loading="lazy"><b>Break room</b><span>All games, just for fun.</span></button>
       </div>
       <div class="vorschau" aria-live="polite">
-        <div class="telefon"><div class="bild"><img id="mini-bild" src="img/screens/en/burger.webp?v=2" alt="Mini-game Burger by recipe"></div></div>
+        <div class="telefon"><div class="bild"><img id="mini-bild" src="img/screens/en/burger.webp?v=3" alt="Mini-game Burger by recipe"></div></div>
         <div class="titel" id="mini-titel">Burger by recipe</div>
       </div>
     </div>
@@ -144,8 +147,8 @@
       <p class="leise">In the city guide you compete with rivals and collect achievements.</p>
     </div>
     <div class="telefone">
-      <div class="telefon klein"><div class="bild"><img src="img/screens/en/welt.webp?v=2" alt="Globe with cities" loading="lazy"></div></div>
-      <div class="telefon klein"><div class="bild"><img src="img/screens/en/stadtfuehrer.webp?v=2" alt="City guide with ranking" loading="lazy"></div></div>
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/welt.webp?v=3" alt="Globe with cities" loading="lazy"></div></div>
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/stadtfuehrer.webp?v=3" alt="City guide with ranking" loading="lazy"></div></div>
     </div>
   </div>
 </section>
@@ -166,8 +169,8 @@
       <p>Move people between your locations, swap roles and find pairs who work especially well together.</p>
     </div>
     <div class="telefone">
-      <div class="telefon klein"><div class="bild"><img src="img/screens/en/mitarbeiter.webp?v=2" alt="Staff card of a legendary restaurant manager" loading="lazy"></div></div>
-      <div class="telefon klein"><div class="bild"><img src="img/screens/en/personal.webp?v=2" alt="Staff page with filters" loading="lazy"></div></div>
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/mitarbeiter.webp?v=3" alt="Staff card of a legendary restaurant manager" loading="lazy"></div></div>
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/personal.webp?v=3" alt="Staff page with filters" loading="lazy"></div></div>
     </div>
   </div>
 </section>
@@ -183,8 +186,8 @@
         <p>Every facade comes with its own perk and a small catch. The ice cream parlour booms in summer, the alpine hut in winter, and the houseboat only really feels at home by the water.</p>
       </div>
       <div class="telefone">
-        <div class="telefon klein"><div class="bild"><img src="img/screens/en/umbau.webp?v=2" alt="Rebuild sheet with facades" loading="lazy"></div></div>
-        <div class="telefon klein"><div class="bild"><img src="img/screens/en/standort.webp?v=2" alt="Location with ice cream parlour facade" loading="lazy"></div></div>
+        <div class="telefon klein"><div class="bild"><img src="img/screens/en/umbau.webp?v=3" alt="Rebuild sheet with facades" loading="lazy"></div></div>
+        <div class="telefon klein"><div class="bild"><img src="img/screens/en/standort.webp?v=3" alt="Location with ice cream parlour facade" loading="lazy"></div></div>
       </div>
     </div>
 
@@ -196,6 +199,27 @@
       <button data-f="legendaer" aria-pressed="false">Legendary</button>
     </div>
     <div class="fassaden" id="fassaden-liste"></div>
+  </div>
+</section>
+
+<!-- MEHR (WEB-2) -->
+<section id="mehr" class="deko">
+  <div class="wrap zwei umgekehrt">
+    <div>
+      <span class="etikett">And there’s more</span>
+      <h2>Your place, your people</h2>
+      <p><b>Bring friends onto your team:</b> scan a friend’s QR code and they join your staff.</p>
+      <p><b>Wardrobe:</b> dress your own character the way you like, from chef’s jacket to costume.</p>
+      <p><b>Place decor freely:</b> put plants, lanterns, benches and chalkboards in front of your place wherever you like, and pick the background color to match.</p>
+      <p><b>Sell places:</b> once you have two locations, you can sell one and take your team with you.</p>
+      <p><b>Landmarks:</b> every city has a landmark you build up step by step.</p>
+      <p><b>Save in iCloud:</b> if you like, the game backs up your progress to your iCloud, so nothing gets lost.</p>
+      <p class="leise"><b>Supporter pack:</b> a one-time 20,000 coins, 6 facades and 2 exclusive costumes. Ads stay voluntary either way: there are only videos you start yourself, never ads that pop up on their own.</p>
+    </div>
+    <div class="telefone">
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/kleiderschrank.webp" alt="Wardrobe with your own character" loading="lazy"></div></div>
+      <div class="telefon klein"><div class="bild"><img src="img/screens/en/home.webp?v=3" alt="Home screen with your place" loading="lazy"></div></div>
+    </div>
   </div>
 </section>
 
@@ -229,7 +253,7 @@
         <img src="img/fassaden/glaskuppel.webp" alt="" loading="lazy">
       </div>
       <h2>Coming soon to the App Store</h2>
-      <p>Worth a Star launches first on iPhone. No account, no data collection: your save game stays on your device.</p>
+      <p>Worth a Star launches first on iPhone. No account, no data collection: your save game stays on your device and, if you like, in your iCloud.</p>
       <a class="knopf" href="anleitung-en.html">Take a look at the guide</a>
     </div>
   </div>
@@ -268,7 +292,7 @@
       knoepfe.forEach(function(x){x.setAttribute('aria-pressed','false')});
       b.setAttribute('aria-pressed','true');
       var name=b.querySelector('b').textContent;
-      bild.src='img/screens/en/'+b.dataset.k+'.webp?v=2';
+      bild.src='img/screens/en/'+b.dataset.k+'.webp?v=3';
       bild.alt='Mini-game '+name;
       titel.textContent=name;
       if(window.innerWidth<880)bild.closest('.vorschau').scrollIntoView({behavior:'smooth',block:'center'});
