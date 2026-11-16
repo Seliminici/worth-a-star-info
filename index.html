@@ -108,9 +108,10 @@
 <section id="minispiele" class="deko">
   <div class="wrap">
     <div class="kopfzeile">
-      <span class="etikett">12 Minispiele</span>
+      <span class="etikett">32 Minispiele</span>
       <h2>Mal kurz selbst anpacken</h2>
       <p>Zwischendurch stehst du selbst in der Küche. Jedes Minispiel dauert nur 30 Sekunden und bringt Taler in die Kasse. Im Pausenraum kannst du alle jederzeit nur zum Spaß spielen und Rekorde jagen.</p>
+      <p>Zwölf Spiele gibt es überall. Dazu bringt jedes der 20 Länder sein eigenes mit: Brezeln schlingen in Deutschland, Sushi vom Band in Japan, Tacos füllen in Mexiko.</p>
     </div>
     <div class="minis">
       <div class="polaroids" id="polaroids">
@@ -180,9 +181,9 @@
   <div class="wrap">
     <div class="zwei" style="margin-bottom:40px">
       <div>
-        <span class="etikett">40 Fassaden</span>
+        <span class="etikett">62 Fassaden</span>
         <h2>Bau deinen Laden um</h2>
-        <p>Vom Foodtruck bis zur Glaskuppel: Schalte Fassaden frei, indem du Meilensteine erreichst oder sie mit Talern kaufst. Danach lässt du jeden Standort umbauen, so oft du willst.</p>
+        <p>Vom Foodtruck bis zur Glaskuppel: Schalte Fassaden frei, indem du Meilensteine erreichst oder sie mit Talern kaufst. Neun Special-Fassaden gibt es für Juwelen. Danach lässt du jeden Standort umbauen, so oft du willst.</p>
         <p>Jede Fassade bringt einen eigenen Vorteil und einen kleinen Haken mit. Die Eisdiele boomt im Sommer, die Almhütte im Winter, und das Hausboot fühlt sich nur am Wasser richtig wohl.</p>
       </div>
       <div class="telefone">
@@ -192,11 +193,12 @@
     </div>
 
     <div class="filter" role="group" aria-label="Nach Seltenheit filtern">
-      <button data-f="alle" aria-pressed="true">Alle 40</button>
+      <button data-f="alle" aria-pressed="true">Alle 62</button>
       <button data-f="gewoehnlich" aria-pressed="false">Gewöhnlich</button>
       <button data-f="selten" aria-pressed="false">Selten</button>
       <button data-f="rar" aria-pressed="false">Rar</button>
       <button data-f="legendaer" aria-pressed="false">Legendär</button>
+      <button data-f="special" aria-pressed="false">Special</button>
     </div>
     <div class="fassaden" id="fassaden-liste"></div>
   </div>
@@ -312,12 +314,13 @@
     ['retro-diner','Retro-Diner','selten'],['trattoria','Trattoria','selten'],['teehaus','Teehaus','selten'],['tapas-bar','Tapas-Bar','selten'],
     ['windmuehlen-baeckerei','Windmühlen-Bäckerei','selten'],['nachtkueche','Nachtküche','selten'],['hofcafe','Hofcafé','selten'],
     ['gewaechshaus','Gewächshaus','rar'],['speisewagen','Speisewagen','rar'],['rooftop-bar','Rooftop-Bar','rar'],['wintergarten-bistro','Wintergarten-Bistro','rar'],
-    ['burg-gaststaette','Burg-Gaststätte','rar'],['hausboot','Hausboot','rar'],['baumhaus-cafe','Baumhaus-Café','rar'],['almhuette','Almhütte','rar'],
+    ['burg-gaststaette','Burg-Gaststätte','rar'],['hausboot','Hausboot','rar'],['almhuette','Almhütte','rar'],
     ['brauhaus','Brauhaus','rar'],['kaffeehaus','Kaffeehaus','rar'],['markthalle','Markthalle','rar'],
     ['riad-teestube','Riad-Teestube','rar'],['feuerwache-pizzeria','Feuerwache-Pizzeria','rar'],
-    ['leuchtturm-fischhaus','Leuchtturm-Fischhaus','legendaer'],['kino-diner','Kino-Diner','legendaer'],['glaskuppel','Glaskuppel','legendaer'],['gourmet-villa','Gourmet-Villa','legendaer']
+    ['leuchtturm-fischhaus','Leuchtturm-Fischhaus','legendaer'],['kino-diner','Kino-Diner','legendaer'],['glaskuppel','Glaskuppel','legendaer'],['gourmet-villa','Gourmet-Villa','legendaer'],
+    ['bierstube-prag','Prager Bierstube','gewoehnlich'],['churreria','Churrería','gewoehnlich'],['lokanta','Lokanta','gewoehnlich'],['surf-shack','Surf-Shack','gewoehnlich'],['biergarten-bayern','Bayerischer Biergarten','selten'],['bistro-parisien','Bistro Parisien','selten'],['blockhuette','Blockhütte','selten'],['diner-route66','Route-66-Diner','selten'],['fika-cafe','Fika-Café','selten'],['pizzeria-napoli','Pizzeria Napoli','selten'],['pojangmacha','Pojangmacha','selten'],['pub','Pub','selten'],['smorrebrod-bar','Smørrebrød-Bar','selten'],['tasca','Tasca','selten'],['aquarium-sushi','Aquarium-Sushi','special'],['baumhaus','Baumhaus','special'],['chili-bombe','Chili-Bombe','special'],['grand-cafe-deco','Grand Café Deco','special'],['hundecafe','Hundecafé','special'],['laternen-ramen','Laternen-Ramen','special'],['lebkuchen-baeckerei','Lebkuchen-Bäckerei','special'],['neon-diner','Neon-Diner','special'],['yoga-retreat','Yoga-Retreat','special']
   ];
-  var N={gewoehnlich:'Gewöhnlich',selten:'Selten',rar:'Rar',legendaer:'Legendär'};
+  var N={gewoehnlich:'Gewöhnlich',selten:'Selten',rar:'Rar',legendaer:'Legendär',special:'Special'};
   var liste=document.getElementById('fassaden-liste');
   liste.innerHTML=D.map(function(d){
     return '<div class="fassade" data-s="'+d[2]+'"><div class="bildflaeche"><img src="img/fassaden/'+d[0]+'.webp" alt="Fassade '+d[1]+'" loading="lazy"></div><b>'+d[1]+'</b><span class="selt">'+N[d[2]]+'</span></div>';
