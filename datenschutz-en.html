@@ -23,7 +23,7 @@
     <h2>In short</h2>
     <p>Worth a Star needs no account and has no servers of its own. Your save game stays on your device. I never get to see it.</p>
     <p>The only third party that receives data about you through the app is <b>Google</b>, and only for <b>optional ad videos</b>. Then there is <b>Apple</b>: for backing up your save game to your iCloud, if you agreed to that, and for anonymous crash reports.</p>
-    <p>Nothing in the game can be bought with real money. If you are 16 or older, ad videos are only shown with your consent. If you are younger, the app doesn't ask for consent and shows no personalized ads. Details below.</p>
+    <p>Nothing in the game can be bought with real money. If you are 16 or older, ad videos are only shown with your consent. If you are younger, the app doesn't ask for consent and requests no personalized ads; Google is then only contacted once you tap an ad video yourself. Details below.</p>
   </div>
 
   <div class="karte">
@@ -51,8 +51,8 @@
     <p>In the staff file at the start, the app asks for your year of birth. Only the year, not the day or month.</p>
     <ul>
       <li><b>What for:</b> only to set up ads in a way that fits your age (see “Children and teenagers”).</li>
-      <li><b>Where:</b> your year of birth stays on your device. I don't receive it, and it is not passed on to anyone. Google doesn't learn your year of birth, at most the signal that ads should be age-appropriate.</li>
-      <li><b>Changing it:</b> any time in the settings.</li>
+      <li><b>Where:</b> your year of birth stays on your device. I don't receive it, and it is not passed on to anyone. It is not backed up to iCloud and is not part of the export file. Google doesn't learn your year of birth, at most an age flag: the signal that you are younger than 16 and, under 13, additionally that ads should be child-directed.</li>
+      <li><b>Changing it:</b> any time in the settings under “Legal”.</li>
     </ul>
   </div>
 
@@ -60,7 +60,7 @@
     <h2>Children and teenagers</h2>
     <p>Worth a Star is rated 13+ in the App Store. What your age means for ads:</p>
     <ul>
-      <li><b>You are younger than 16:</b> the app doesn't ask you to consent to ads. By law, you can't give that consent on your own yet. You get no ads tailored to you, and Apple's tracking prompt doesn't appear. Ad videos, if there are any, are age-appropriate ads only.</li>
+      <li><b>You are younger than 16:</b> the app doesn't ask you to consent to ads. By law, you can't give that consent on your own yet. Apple's tracking prompt doesn't appear. If you tap an ad video, the app requests it from Google as non-personalized and with an age flag; if you are younger than 13, the requests are additionally marked as child-directed. Which ads then come is decided by Google under its own rules for these flags (restricted ads only); it may also be that no video is available at that moment. As long as you don't tap an ad video, the app doesn't contact Google.</li>
       <li><b>You are 16 or older:</b> the app asks whether you agree to ads. Ad videos are only shown if you agree.</li>
       <li>In both cases, a video only starts when you tap it yourself. You can play the whole game without any videos.</li>
     </ul>
@@ -99,13 +99,18 @@
     <p><b>How consent works (age 16 and up):</b></p>
     <ul>
       <li>The app asks whether you agree to ads through Google's consent dialog (User Messaging Platform). Agreeing and declining are both right there on the first page.</li>
+      <li><b>Before you answer:</b> so that the dialog can appear, the app loads it from Google; your IP address is transmitted in the process. Google's consent dialog loads its font from Google servers when it is shown (fonts.googleapis.com, fonts.gstatic.com). For technical reasons, Google learns the device's IP address when this happens. This is necessary to be able to ask you at all (Art. 6(1)(f) GDPR; for the stored answer § 25(2) no. 2 TDDDG). Google's advertising services are only contacted after you have agreed; without consent, only the dialog is loaded.</li>
       <li><b>If you agree</b>, Google may store and read information on your device for the videos and use data such as your IP address, device information and, if you allow it, your device's advertising identifier to deliver, personalize and measure ads (Art. 6(1)(a) GDPR, § 25(1) of the German TDDDG).</li>
       <li><b>If you decline, there are no ad videos.</b> The app then loads no ads and sends no data to Google for them. If you tap a video button, the app explains that consent is needed for it. The game stays playable; you just don't get the rewards from videos.</li>
       <li><b>Apple's tracking prompt</b> (App Tracking Transparency) only appears if you agreed in Google's dialog. If you don't allow tracking, Google doesn't receive your device's advertising identifier. Your answer has no effect on the rewards.</li>
       <li>Google's consent component stores your answer on your device so you aren't asked again every time.</li>
-      <li><b>Withdrawing consent:</b> any time in the game's settings under “Change ad consent”. You can change the tracking permission in your iOS settings under “Privacy &amp; Security › Tracking”. Withdrawal applies from then on.</li>
+      <li><b>Withdrawing consent:</b> any time in the game's settings under “Legal › Change ad consent”. You can change the tracking permission in your iOS settings under “Privacy &amp; Security › Tracking”. Withdrawal applies from then on.</li>
     </ul>
-    <p><b>Under 16</b>, there is no consent dialog and no tracking prompt. The app then requests at most age-appropriate, non-personalized ads from Google.</p>
+    <p><b>Under 16</b>, there is no consent dialog and no tracking prompt. Google is not contacted when the app starts, only once you tap an ad video yourself. This is what happens then:</p>
+    <ul>
+      <li><b>What the app decides:</b> it only starts Google's ad component when you tap. It requests the video without a consent signal, as non-personalized and with an age flag: under 13 as child-directed with the content rating “General”, from 13 to 15 as “under the age of consent” with the content rating “Teen”.</li>
+      <li><b>What Google decides:</b> for such requests, Google only serves restricted ads under its own rules. Which data Google's ad component transmits in detail (in any case the IP address and device information) and whether it stores or reads anything on your device is determined by Google, not by the app. I can't control that in detail.</li>
+    </ul>
   </div>
 
   <div class="karte">
@@ -171,6 +176,14 @@
       <li><b>Storage period:</b> until you switch the backup off or delete the copy in iCloud.</li>
     </ul>
 
+    <h3>Consent dialog (age 16 and up)</h3>
+    <ul>
+      <li><b>Purpose:</b> asking for your consent and recording your answer.</li>
+      <li><b>Legal basis:</b> legitimate interest in obtaining the legally required consent and being able to prove it (Art. 6(1)(f) GDPR, § 25(2) no. 2 TDDDG).</li>
+      <li><b>Recipients:</b> Google Ireland Limited and Google LLC (USA), which deliver the dialog and its font (IP address).</li>
+      <li><b>Storage period:</b> your answer stays on the device until you change it or delete the app. How long Google stores access data is up to Google.</li>
+    </ul>
+
     <h3>Ad videos, age 16 and up</h3>
     <ul>
       <li><b>Purpose:</b> delivering, personalizing and measuring ads; funding the free game.</li>
@@ -181,7 +194,7 @@
 
     <h3>Ad videos, under 16</h3>
     <ul>
-      <li><b>Purpose:</b> delivering age-appropriate, non-personalized ads; funding the free game.</li>
+      <li><b>Purpose:</b> delivering restricted, non-personalized ads with an age flag, and only when you tap a video; funding the free game.</li>
       <li><b>Legal basis:</b> legitimate interest in funding the game (Art. 6(1)(f) GDPR).</li>
       <li><b>Recipients:</b> Google Ireland Limited and Google LLC (USA).</li>
       <li><b>Storage period:</b> up to Google (see Google's privacy policy).</li>
@@ -226,7 +239,7 @@
     <ul>
       <li><b>Delete the app:</b> this removes your save game, your year of birth and your consent status from the device.</li>
       <li><b>Delete the iCloud copy:</b> switch off the iCloud backup in the game's settings under “Save” before you delete the app.</li>
-      <li><b>Withdraw consent:</b> in the game's settings under “Change ad consent”.</li>
+      <li><b>Withdraw consent:</b> in the game's settings under “Legal › Change ad consent”.</li>
       <li><b>Data at Google:</b> you request access and deletion directly from Google. You can block your device's advertising identifier in your iOS settings under “Privacy &amp; Security › Tracking”.</li>
     </ul>
   </div>

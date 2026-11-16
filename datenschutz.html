@@ -23,7 +23,7 @@
     <h2>Kurz gesagt</h2>
     <p>Worth a Star braucht kein Konto und hat keine eigenen Server. Dein Spielstand bleibt auf deinem Gerät. Ich bekomme ihn nicht zu sehen.</p>
     <p>Der einzige Dritte, der über die App Daten von dir bekommt, ist <b>Google</b>, und zwar nur für <b>freiwillige Werbevideos</b>. Dazu kommt <b>Apple</b>: für die Sicherung deines Spielstands in deiner iCloud, wenn du ihr zugestimmt hast, und für anonyme Absturzberichte.</p>
-    <p>Im Spiel kann man nichts mit echtem Geld kaufen. Bist du 16 oder älter, gibt es Werbevideos nur mit deiner Einwilligung. Bist du jünger, fragt die App nicht danach und zeigt keine personalisierte Werbung. Details stehen unten.</p>
+    <p>Im Spiel kann man nichts mit echtem Geld kaufen. Bist du 16 oder älter, gibt es Werbevideos nur mit deiner Einwilligung. Bist du jünger, fragt die App nicht danach und fordert keine personalisierte Werbung an; Google wird dann erst kontaktiert, wenn du selbst ein Werbevideo antippst. Details stehen unten.</p>
   </div>
 
   <div class="karte">
@@ -48,11 +48,11 @@
 
   <div class="karte">
     <h2>Geburtsjahr</h2>
-    <p>Im Personalfragebogen am Anfang fragt die App nach deinem Geburtsjahr. Nur nach dem Jahr, nicht nach Tag oder Monat.</p>
+    <p>Im Personalbogen am Anfang fragt die App nach deinem Geburtsjahr. Nur nach dem Jahr, nicht nach Tag oder Monat.</p>
     <ul>
       <li><b>Wozu:</b> allein, um die Werbung passend zu deinem Alter einzustellen (siehe „Kinder und Jugendliche“).</li>
-      <li><b>Wo:</b> Das Geburtsjahr bleibt auf deinem Gerät. Ich bekomme es nicht, und es wird an niemanden weitergegeben. Google erfährt nicht dein Geburtsjahr, sondern höchstens den Hinweis, dass Werbung altersgerecht sein soll.</li>
-      <li><b>Ändern:</b> jederzeit in den Einstellungen.</li>
+      <li><b>Wo:</b> Das Geburtsjahr bleibt auf deinem Gerät. Ich bekomme es nicht, und es wird an niemanden weitergegeben. Es wird nicht in der iCloud gesichert und steht nicht in der Export-Datei. Google erfährt nicht dein Geburtsjahr, sondern höchstens ein Alterskennzeichen: den Hinweis, dass du jünger als 16 bist, und unter 13 zusätzlich, dass die Werbung kindgerecht sein soll.</li>
+      <li><b>Ändern:</b> jederzeit in den Einstellungen unter „Rechtliches“.</li>
     </ul>
   </div>
 
@@ -60,7 +60,7 @@
     <h2>Kinder und Jugendliche</h2>
     <p>Worth a Star ist im App Store ab 13 Jahren freigegeben. Was dein Alter für die Werbung bedeutet:</p>
     <ul>
-      <li><b>Du bist jünger als 16:</b> Die App fragt dich nicht nach einer Einwilligung in Werbung. So eine Einwilligung kannst du nach dem Gesetz noch nicht allein geben. Du bekommst keine Werbung, die auf dich zugeschnitten ist, und Apples Tracking-Abfrage erscheint nicht. Werbevideos sind, wenn überhaupt, nur als altersgerechte Werbung zu sehen.</li>
+      <li><b>Du bist jünger als 16:</b> Die App fragt dich nicht nach einer Einwilligung in Werbung. So eine Einwilligung kannst du nach dem Gesetz noch nicht allein geben. Apples Tracking-Abfrage erscheint nicht. Tippst du ein Werbevideo an, fragt die App es bei Google als nicht personalisiert und mit einem Alterskennzeichen an; bist du jünger als 13, sind die Anfragen zusätzlich als kindgerecht gekennzeichnet. Welche Anzeigen dann kommen, entscheidet Google nach eigenen Regeln für diese Kennzeichen (nur eingeschränkte Anzeigen); es kann auch sein, dass es gerade kein Video gibt. Solange du kein Werbevideo antippst, nimmt die App keinen Kontakt zu Google auf.</li>
       <li><b>Du bist 16 oder älter:</b> Die App fragt dich, ob du mit Werbung einverstanden bist. Nur wenn du zustimmst, gibt es Werbevideos.</li>
       <li>In beiden Fällen gilt: Ein Video startet nur, wenn du es selbst antippst. Das Spiel lässt sich auch ganz ohne Videos spielen.</li>
     </ul>
@@ -99,13 +99,18 @@
     <p><b>So läuft die Einwilligung ab (ab 16 Jahren):</b></p>
     <ul>
       <li>Die App fragt dich über Googles Einwilligungs-Dialog (User Messaging Platform), ob du mit Werbung einverstanden bist. Zustimmen und Ablehnen stehen gleich auf der ersten Seite.</li>
+      <li><b>Bevor du antwortest:</b> Damit der Dialog erscheinen kann, lädt die App ihn bei Google; dabei wird deine IP-Adresse übertragen. Googles Einwilligungsdialog lädt beim Anzeigen seine Schriftart von Google-Servern (fonts.googleapis.com, fonts.gstatic.com). Dabei erfährt Google technisch bedingt die IP-Adresse des Geräts. Das ist nötig, um dich überhaupt fragen zu können (Art. 6 Abs. 1 lit. f DSGVO; für die gespeicherte Antwort § 25 Abs. 2 Nr. 2 TDDDG). Googles Werbedienste werden erst kontaktiert, nachdem du zugestimmt hast; ohne Einwilligung bleibt es beim Dialog.</li>
       <li><b>Stimmst du zu</b>, darf Google für die Videos Informationen auf deinem Gerät speichern und auslesen und Daten wie die IP-Adresse, Geräte-Informationen und, wenn du es erlaubst, die Werbe-Kennung deines Geräts nutzen, um Werbung auszuliefern, auf dich zuzuschneiden und zu messen (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG).</li>
       <li><b>Lehnst du ab, gibt es keine Werbevideos.</b> Die App lädt dann keine Werbung und schickt dafür keine Daten an Google. Tippst du einen Video-Knopf an, erklärt die App, dass dafür die Einwilligung nötig ist. Das Spiel bleibt spielbar; nur die Belohnungen aus Videos gibt es dann nicht.</li>
       <li><b>Apples Tracking-Abfrage</b> („App-Tracking-Transparenz“) erscheint nur, wenn du im Google-Dialog zugestimmt hast. Erlaubst du das Tracking nicht, bekommt Google die Werbe-Kennung deines Geräts nicht. Auf die Belohnungen hat deine Antwort keinen Einfluss.</li>
       <li>Deine Antwort speichert Googles Einwilligungs-Baustein auf deinem Gerät, damit du nicht jedes Mal neu gefragt wirst.</li>
-      <li><b>Widerruf:</b> jederzeit in den Einstellungen des Spiels unter „Werbe-Einwilligung ändern“. Die Tracking-Erlaubnis änderst du in den iOS-Einstellungen unter „Datenschutz &amp; Sicherheit › Tracking“. Der Widerruf gilt für die Zukunft.</li>
+      <li><b>Widerruf:</b> jederzeit in den Einstellungen des Spiels unter „Rechtliches › Werbe-Einwilligung ändern“. Die Tracking-Erlaubnis änderst du in den iOS-Einstellungen unter „Datenschutz &amp; Sicherheit › Tracking“. Der Widerruf gilt für die Zukunft.</li>
     </ul>
-    <p><b>Unter 16 Jahren</b> erscheint kein Einwilligungs-Dialog und keine Tracking-Abfrage. Die App fordert bei Google dann höchstens altersgerechte, nicht personalisierte Werbung an.</p>
+    <p><b>Unter 16 Jahren</b> erscheint kein Einwilligungs-Dialog und keine Tracking-Abfrage. Beim Start der App wird Google nicht kontaktiert, sondern erst, wenn du selbst auf ein Werbevideo tippst. So läuft es dann ab:</p>
+    <ul>
+      <li><b>Was die App bestimmt:</b> Sie startet Googles Werbe-Baustein erst bei deinem Tipp. Sie fragt das Video ohne Einwilligungs-Signal an, als nicht personalisiert und mit einem Alterskennzeichen: unter 13 als kindgerecht mit der Inhaltsstufe „für alle“, von 13 bis 15 als „unter dem Einwilligungsalter“ mit der Inhaltsstufe „Jugendliche“.</li>
+      <li><b>Was Google bestimmt:</b> Google liefert auf solche Anfragen nach eigenen Regeln nur eingeschränkte Anzeigen. Welche Daten Googles Werbe-Baustein dabei im Einzelnen überträgt (in jedem Fall die IP-Adresse und Geräte-Informationen) und ob er etwas auf deinem Gerät speichert oder ausliest, legt Google fest, nicht die App. Ich kann das nicht im Einzelnen steuern.</li>
+    </ul>
   </div>
 
   <div class="karte">
@@ -171,6 +176,14 @@
       <li><b>Speicherdauer:</b> bis du die Sicherung abschaltest oder die Kopie in iCloud löschst.</li>
     </ul>
 
+    <h3>Einwilligungs-Dialog (ab 16 Jahren)</h3>
+    <ul>
+      <li><b>Zweck:</b> dich nach deiner Einwilligung fragen und deine Antwort festhalten.</li>
+      <li><b>Rechtsgrundlage:</b> berechtigtes Interesse daran, die gesetzlich nötige Einwilligung einzuholen und nachweisen zu können (Art. 6 Abs. 1 lit. f DSGVO, § 25 Abs. 2 Nr. 2 TDDDG).</li>
+      <li><b>Empfänger:</b> Google Ireland Limited und Google LLC (USA), die den Dialog und seine Schriftart ausliefern (IP-Adresse).</li>
+      <li><b>Speicherdauer:</b> Deine Antwort bleibt auf dem Gerät, bis du sie änderst oder die App löschst. Wie lange Google Zugriffsdaten speichert, legt Google fest.</li>
+    </ul>
+
     <h3>Werbevideos ab 16 Jahren</h3>
     <ul>
       <li><b>Zweck:</b> Werbung ausliefern, zuschneiden und messen; das kostenlose Spiel finanzieren.</li>
@@ -181,7 +194,7 @@
 
     <h3>Werbevideos unter 16 Jahren</h3>
     <ul>
-      <li><b>Zweck:</b> altersgerechte, nicht personalisierte Werbung ausliefern; das kostenlose Spiel finanzieren.</li>
+      <li><b>Zweck:</b> eingeschränkte, nicht personalisierte Werbung mit Alterskennzeichen ausliefern, und nur, wenn du ein Video antippst; das kostenlose Spiel finanzieren.</li>
       <li><b>Rechtsgrundlage:</b> berechtigtes Interesse an der Finanzierung des Spiels (Art. 6 Abs. 1 lit. f DSGVO).</li>
       <li><b>Empfänger:</b> Google Ireland Limited und Google LLC (USA).</li>
       <li><b>Speicherdauer:</b> legt Google fest (siehe Googles Datenschutzerklärung).</li>
@@ -226,7 +239,7 @@
     <ul>
       <li><b>App löschen:</b> Damit sind Spielstand, Geburtsjahr und der Stand deiner Einwilligung vom Gerät entfernt.</li>
       <li><b>iCloud-Kopie löschen:</b> in den Einstellungen des Spiels unter „Spielstand“ die iCloud-Sicherung abschalten, bevor du die App löschst.</li>
-      <li><b>Einwilligung zurücknehmen:</b> in den Einstellungen des Spiels unter „Werbe-Einwilligung ändern“.</li>
+      <li><b>Einwilligung zurücknehmen:</b> in den Einstellungen des Spiels unter „Rechtliches › Werbe-Einwilligung ändern“.</li>
       <li><b>Daten bei Google:</b> Auskunft und Löschung verlangst du direkt bei Google. Die Werbe-Kennung deines Geräts kannst du in den iOS-Einstellungen unter „Datenschutz &amp; Sicherheit › Tracking“ sperren.</li>
     </ul>
   </div>
